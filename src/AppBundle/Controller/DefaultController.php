@@ -18,4 +18,12 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
+
+    /** Es necesario agregar "@Route" con sus atributos para activar la ruta
+     * @Route("/hello-world", name="helloWorld")
+     */
+    public function helloWorldAction () {
+        echo "<h1>Hola Mundo!!!</h1>";
+        die();
+    }
 }
