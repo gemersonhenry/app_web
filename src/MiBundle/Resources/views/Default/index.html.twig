@@ -20,7 +20,19 @@
 	{% for producto in productos %}
 		{{ producto.producto }}	
 	{% endfor %}
+
 	<br/>
 	{{ productos|length }}
+
+	{# TRABAJANDO CON FECHAS #}
+	{% set fecha = date("","America/Lima") %}
+	{{ dump(fecha) }}
+
+	<br/>
+	{{ include("MiBundle:Default:partial.html.twig") }}
+	{{ max([13, 87, 190, 54, 135]) }}
+
+	<br/>
+	{{ generateTable(5,7)|raw }}
 
 {% endblock %}
