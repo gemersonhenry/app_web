@@ -1,7 +1,7 @@
 pruebas_index:
     path: /pruebas/{lang}/{name}/{age}
     defaults: { _controller: AppBundle:Pruebas:index, lang:es, name:Gemerson, age:18 }
-    methods: [GET]
+    methods: [GET, POST] 
     requirements:
         name: \w+
         age: \d+

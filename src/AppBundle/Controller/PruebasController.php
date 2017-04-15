@@ -18,6 +18,10 @@ class PruebasController extends Controller
         
         //return $this->redirect( $request->getBaseUrl()."/hello-world" );
 
+        var_dump( $request->query->get("hola") );
+        var_dump( $request->get("hola-post") );
+        die();
+
         return $this->render( 'AppBundle:Pruebas:index.html.twig',
             array(
                 'texto' => "Mensaje desde la action del controller - Name: $name, Age: $age"
