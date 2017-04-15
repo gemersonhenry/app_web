@@ -1,8 +1,26 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}
+
+	{{ title }}
+
+{% endblock %}
+
 {% block container %}
 	
+	{# ESTO ES UN COMENTARIO
+	
+	#}
+	{% set nombre = "Henry" %}
+	{{ nombre }}
+
 	{{ parent() }}
 	Hello World!
+	<br/>
+	{% for producto in productos %}
+		{{ producto.producto }}	
+	{% endfor %}
+	<br/>
+	{{ productos|length }}
 
 {% endblock %}
