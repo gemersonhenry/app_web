@@ -3,6 +3,7 @@
 namespace MiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use MiBundle\Entity\Productos;
 
 class DefaultController extends Controller
 {
@@ -22,5 +23,25 @@ class DefaultController extends Controller
         		'productos' => $productos
         	)
         );
+    }
+
+    public function createAction ()
+    {
+        $producto = new Productos();
+        $producto->setName("Curso de symfony 3");
+        $producto->setDescription("Curso completo de symfony");
+        $producto->setPrice(120);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist( $producto );
+        $flush = $em->flush();
+
+        if ( $flush != null ) {
+            echo "El producto no se ha creado bien";
+        } else {
+            echo "El producto se ha creado correctamente";
+        }
+
+        die();
     }
 }

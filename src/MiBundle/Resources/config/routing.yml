@@ -1,3 +1,7 @@
 mi_homepage:
     path:     /
     defaults: { _controller: MiBundle:Default:index }
+
+db_producto_create:
+    path: /db/create
+    defaults: { _controller: MiBundle:Default:create }
